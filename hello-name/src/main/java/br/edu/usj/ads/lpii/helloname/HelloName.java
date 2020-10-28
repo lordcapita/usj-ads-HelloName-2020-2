@@ -10,10 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloName {
     
     @PostMapping(value="helloName")
-    public ModelAndView postHelloName(@RequestParam String nome) {
+    public ModelAndView postHelloName(@RequestParam String nome, @RequestParam String email) {
         ModelAndView modelAndView = new ModelAndView("hello-name");
+        
        
-       String bemVindo = "Seja bem vindo, " +  nome + "!";
+       String bemVindo = "Seja bem vindo, " +  nome + "!" + "seu E-mail é: " + email;
 
         modelAndView.addObject("mensagem", bemVindo);
 
